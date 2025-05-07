@@ -144,7 +144,7 @@ public class BottomCell : MonoBehaviour
         hexaColumn = GameManager.instance.poolManager.GetHexaColumn();
         hexaColumn.InitColumn();
         hexaColumn.transform.SetParent(transform);
-        hexaColumn.transform.localPosition = new Vector3(0, 0.2f);
+        hexaColumn.transform.localPosition = new Vector3(0, 0f);
         hexaColumn.currentBottomCell = this;
     }
 

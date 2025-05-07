@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class HexaColumn : MonoBehaviour
@@ -15,9 +16,9 @@ public class HexaColumn : MonoBehaviour
 
     public HexaColumnData currentHexaColumnData;
 
-    private const float localSpacingY = 0.20f;
+    private const float localSpacingY = 0.25f;
 
-    private const float colliderHeight = 0.21f;
+    private const float colliderHeight = 0.26f;
 
     public BoxCollider boxCollider;
 
@@ -46,7 +47,7 @@ public class HexaColumn : MonoBehaviour
     private void Start()
     {
         if (currentBottomCell == null) return;
-       
+
         cellColorList.Clear();
         currentHexaColumnData.columnDataList.Clear();
 
@@ -100,8 +101,8 @@ public class HexaColumn : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
 
-        int group1Count = Random.Range(2, 4);
-        int firstColorIndex = Random.Range(0, 6);
+        int group1Count = UnityEngine.Random.Range(2, 4);
+        int firstColorIndex = UnityEngine.Random.Range(0, 6);
         int cellCount_1 = 0;
 
         for (int i = 0; i < group1Count && i < hexaCellList.Count; i++)
@@ -117,7 +118,7 @@ public class HexaColumn : MonoBehaviour
         int secondColorIndex;
         do
         {
-            secondColorIndex = Random.Range(0, 6);
+            secondColorIndex = UnityEngine.Random.Range(0, 6);
         } while (secondColorIndex == firstColorIndex);
         int cellCount_2 = 0;
 
@@ -139,7 +140,7 @@ public class HexaColumn : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         /*   cellColorList.Clear();
            currentHexaColumnData.columnDataList.Clear();*/
-        int prefilledNum = Random.Range(1, 6);
+        int prefilledNum = UnityEngine.Random.Range(1, 6);
         int cellCount_1 = 0;
 
         for (int i = 0; i < hexaCellList.Count; i++)
@@ -151,7 +152,7 @@ public class HexaColumn : MonoBehaviour
 
         ColumnData columnData_1 = new ColumnData(GameManager.instance.colorConfig.colorList[prefilledNum].colorID, cellCount_1);
         currentHexaColumnData.columnDataList.Add(columnData_1);
-        if(cellColorList.Count == 0)
+        if (cellColorList.Count == 0)
         {
             Debug.Log("NullListColor");
         }
@@ -197,13 +198,13 @@ public class HexaColumn : MonoBehaviour
     public void CreateColumn(HexaColumnData hexaColumnData)
     {
         currentHexaColumnData = hexaColumnData;
-        
-        if(hexaColumnData == null)
+
+        if (hexaColumnData == null)
         {
             Debug.Log("Null data line");
         }
 
-        if(hexaColumnData.columnDataList.Count == 0)
+        if (hexaColumnData.columnDataList.Count == 0)
         {
             Debug.Log("Null Data list line 205");
         }
@@ -218,6 +219,7 @@ public class HexaColumn : MonoBehaviour
                 HexaCell cell = GameManager.instance.poolManager.GetHexaCell();
                 cell.transform.SetParent(transform);
                 cell.transform.localPosition = new Vector3(0, localSpacingY * (1 + hexaCellList.Count), 0);
+                cell.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));  // TODO : Kishan 
                 cell.InitCell(hexaColumnData.columnDataList[i].colorID);
                 cellColorList.Add(hexaColumnData.columnDataList[i].colorID);
                 hexaCellList.Add(cell);
@@ -290,6 +292,7 @@ public class HexaColumn : MonoBehaviour
             HexaCell cell = addCellColumn.hexaCellList[i];
             cell.transform.SetParent(transform);
             cell.transform.localPosition = new Vector3(0, localSpacingY * (1 + hexaCellList.Count), 0);
+            cell.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));  // TODO : Kishan 
             hexaCellList.Add(cell);
         }
 
@@ -324,6 +327,7 @@ public class HexaColumn : MonoBehaviour
             HexaCell cell = addCellColumn.hexaCellList[i];
             cell.transform.SetParent(transform);
             cell.transform.localPosition = new Vector3(0, localSpacingY * (1 + hexaCellList.Count), 0);
+            cell.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));  // TODO : Kishan 
             hexaCellList.Add(cell);
         }
 

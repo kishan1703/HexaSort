@@ -31,13 +31,13 @@ public class PoolManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     #region INIT POOL
     public void InitPool()
@@ -45,7 +45,7 @@ public class PoolManager : MonoBehaviour
         //for bottom cell
         bottomCellPools = new List<BottomCell>();
 
-        for(int i = 0; i < initBottomCellAmount; i++)
+        for (int i = 0; i < initBottomCellAmount; i++)
         {
             BottomCell bottomCell = Instantiate(bottomCellPrefab);
             bottomCell.transform.SetParent(poolParent);
@@ -64,7 +64,7 @@ public class PoolManager : MonoBehaviour
             HexaCell hexaCell = Instantiate(hexaCellPrefab);
             hexaCell.transform.SetParent(poolParent);
             hexaCell.transform.localPosition = Vector3.zero;
-            hexaCell.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            hexaCell.transform.localRotation = Quaternion.Euler(0, 90, 0);
             hexaCell.transform.localScale = Vector3.one;
             hexaCell.gameObject.SetActive(false);
             hexaCellPools.Add(hexaCell);
@@ -78,7 +78,7 @@ public class PoolManager : MonoBehaviour
             HexaColumn hexaColumn = Instantiate(hexaColumnPrefab);
             hexaColumn.transform.SetParent(poolParent);
             hexaColumn.transform.localPosition = Vector3.zero;
-            hexaColumn.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            hexaColumn.transform.localRotation = Quaternion.Euler(0, 90, 0);
             hexaColumn.transform.localScale = Vector3.one;
             hexaColumn.gameObject.SetActive(false);
             hexaColumnPools.Add(hexaColumn);
@@ -91,7 +91,7 @@ public class PoolManager : MonoBehaviour
     {
         BottomCell bottomCell = null;
 
-        if(bottomCellPools.Count > 0)
+        if (bottomCellPools.Count > 0)
         {
             bottomCell = bottomCellPools[0];
             bottomCellPools.RemoveAt(0);
@@ -125,7 +125,7 @@ public class PoolManager : MonoBehaviour
     #region HEXA CELL POOL
     public HexaCell GetHexaCell()
     {
-        HexaCell  hexaCell = null;
+        HexaCell hexaCell = null;
 
         if (hexaCellPools.Count > 0)
         {
