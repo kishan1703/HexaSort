@@ -199,7 +199,7 @@ public class AdmobManager : MonoBehaviour
             RequestBanner();
             bannerView?.Show();
         }
-        FirebaseManager.instance.TrackTotalAds(AdType.Banner);
+        // FirebaseManager.instance.TrackTotalAds(AdType.Banner);
     }
 
     public void HideBannerAd()
@@ -326,7 +326,7 @@ public class AdmobManager : MonoBehaviour
             HideBannerAd();
             Debug.Log("Showing interstitial ad.");
             interstitial.Show();
-            FirebaseManager.instance.TrackTotalAds(AdType.Interstitial);
+            // FirebaseManager.instance.TrackTotalAds(AdType.Interstitial);
         }
         else
         {
@@ -432,7 +432,7 @@ public class AdmobManager : MonoBehaviour
                 // TODO: Reward the user.
                 RewardAction = action;
                 RewardAction.Invoke();
-                FirebaseManager.instance.TrackTotalAds(AdType.Reward_Interstitial);
+                // FirebaseManager.instance.TrackTotalAds(AdType.Reward_Interstitial);
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });
         }
@@ -548,7 +548,7 @@ public class AdmobManager : MonoBehaviour
             {
                 RewardAction = action;
                 RewardAction.Invoke();
-                FirebaseManager.instance.TrackTotalAds(AdType.Reward);
+                // FirebaseManager.instance.TrackTotalAds(AdType.Reward);
                 Debug.Log($"Rewarded ad rewarded the user. Type: {reward.Type}, amount: {reward.Amount}");
             });
         }

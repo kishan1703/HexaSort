@@ -102,7 +102,7 @@ public class HomeView : BaseView
     {
         yield return new WaitForSeconds(15f);
 
-        FirebaseManager.instance.ShowTermsPopup();
+        // FirebaseManager.instance.ShowTermsPopup();
     }
 
     //.OnComplete(() =>

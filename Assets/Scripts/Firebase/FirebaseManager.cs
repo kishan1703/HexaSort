@@ -33,8 +33,8 @@ public class FirebaseManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
-            InitializeFirebase();
+            // DontDestroyOnLoad(gameObject);
+            // InitializeFirebase();
         }
         else
         {
@@ -70,7 +70,7 @@ public class FirebaseManager : MonoBehaviour
             {
                 app = FirebaseApp.DefaultInstance;
                 FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
-               // RemoteConfigManager.instance.InitializeRemoteConfig();
+                // RemoteConfigManager.instance.InitializeRemoteConfig();
                 Debug.Log("Firebase initialized successfully");
                 TrackDailyEngagement();
             }
@@ -173,24 +173,24 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    public void TrackTotalAds(AdType adType)
-    {
-        switch (adType)
-        {
-            case AdType.Banner:
-                FirebaseAnalytics.LogEvent("Banner_Ads");
-                break;
-            case AdType.Interstitial:
-                FirebaseAnalytics.LogEvent("Interstitial_Ads");
-                break;
-            case AdType.Reward:
-                FirebaseAnalytics.LogEvent("Reward_Ads");
-                break;
-            case AdType.AppOpen:
-                FirebaseAnalytics.LogEvent("AppOpen_Ads");
-                break;
-        }
-    }
+    // public void TrackTotalAds(AdType adType)
+    // {
+    //     switch (adType)
+    //     {
+    //         case AdType.Banner:
+    //             FirebaseAnalytics.LogEvent("Banner_Ads");
+    //             break;
+    //         case AdType.Interstitial:
+    //             FirebaseAnalytics.LogEvent("Interstitial_Ads");
+    //             break;
+    //         case AdType.Reward:
+    //             FirebaseAnalytics.LogEvent("Reward_Ads");
+    //             break;
+    //         case AdType.AppOpen:
+    //             FirebaseAnalytics.LogEvent("AppOpen_Ads");
+    //             break;
+    //     }
+    // }
 
 
     public void LevelAdTrack(string levelName, AdType adType, double revenue)
@@ -247,20 +247,20 @@ public class FirebaseManager : MonoBehaviour
     #endregion
 
     #region Track_IAP
-/*
-    public void FirbaseTrackOnPurchaseComplete(string productId, string productName, string productCategory, double price *//*,string currency*//*)
-    {
-        FirebaseAnalytics.LogEvent(
-            FirebaseAnalytics.EventPurchase,
-            new Parameter(FirebaseAnalytics.ParameterItemId, productId),
-            new Parameter(FirebaseAnalytics.ParameterItemName, productName),
-            new Parameter(FirebaseAnalytics.ParameterItemCategory, productCategory),
-            new Parameter(FirebaseAnalytics.ParameterPrice, price)
-        //new Parameter(FirebaseAnalytics.ParameterCurrency, currency)
-        );
+    /*
+        public void FirbaseTrackOnPurchaseComplete(string productId, string productName, string productCategory, double price *//*,string currency*//*)
+        {
+            FirebaseAnalytics.LogEvent(
+                FirebaseAnalytics.EventPurchase,
+                new Parameter(FirebaseAnalytics.ParameterItemId, productId),
+                new Parameter(FirebaseAnalytics.ParameterItemName, productName),
+                new Parameter(FirebaseAnalytics.ParameterItemCategory, productCategory),
+                new Parameter(FirebaseAnalytics.ParameterPrice, price)
+            //new Parameter(FirebaseAnalytics.ParameterCurrency, currency)
+            );
 
-        Debug.Log($"Purchase tracked: {productName} (${price} )");
-    }*/
+            Debug.Log($"Purchase tracked: {productName} (${price} )");
+        }*/
 
     #endregion
 

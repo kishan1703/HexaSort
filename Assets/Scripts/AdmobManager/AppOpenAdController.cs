@@ -158,7 +158,7 @@ public class AppOpenAdController : MonoBehaviour
         {
             Debug.Log("Showing app open ad.");
             appOpenAd.Show();
-            FirebaseManager.instance.TrackTotalAds(AdType.AppOpen);
+            // FirebaseManager.instance.TrackTotalAds(AdType.AppOpen);
         }
         else
         {
