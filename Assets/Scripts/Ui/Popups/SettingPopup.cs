@@ -15,10 +15,10 @@ public class SettingPopup : MonoBehaviour
     [Space(5)]
     [SerializeField] private Sprite onSprite;
     [SerializeField] private Sprite offSprite;
-  
+
     [Header("----- Btn Animation -----"), Space(5)]
     [SerializeField] private RectTransform soundOnIcon;
-    [SerializeField] private RectTransform musicOnIcon;    
+    [SerializeField] private RectTransform musicOnIcon;
     [SerializeField] private RectTransform vibrateOnIcon;
     [SerializeField] private Transform popup;
 
@@ -45,10 +45,10 @@ public class SettingPopup : MonoBehaviour
         isSoundToggle = PlayerPrefsManager.GetSoundState();
         isVibrationToggle = PlayerPrefsManager.GetVibrateState();
 
-       
+
 
         popup.localScale = Vector3.zero;
-        popup.DOScale(Vector3.one * 0.85f, 1f).SetEase(Ease.OutBounce);
+        popup.DOScale(Vector3.one * 0.85f, 0.5f).SetEase(Ease.OutBounce);
         UpdateUiOnStart();
     }
     private void UpdateUiOnStart()
@@ -72,11 +72,11 @@ public class SettingPopup : MonoBehaviour
         else
         {
             musicOnIcon.DOLocalMoveX(-85f, 0.1f);
-            musicImg.sprite = offSprite;   
+            musicImg.sprite = offSprite;
         }
 
         if (isVibrationToggle == true)
-        {  
+        {
             vibrateOnIcon.DOLocalMoveX(85f, 0.1f);
             vibrationImg.sprite = onSprite;
         }
