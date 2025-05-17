@@ -219,7 +219,7 @@ public class HexaColumn : MonoBehaviour
                 HexaCell cell = GameManager.instance.poolManager.GetHexaCell();
                 cell.transform.SetParent(transform);
                 cell.transform.localPosition = new Vector3(0, localSpacingY * (1 + hexaCellList.Count), 0);
-                cell.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));  // TODO : Kishan 
+                cell.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));  // TODO : Kishan 
                 cell.InitCell(hexaColumnData.columnDataList[i].colorID);
                 cellColorList.Add(hexaColumnData.columnDataList[i].colorID);
                 hexaCellList.Add(cell);
@@ -292,7 +292,7 @@ public class HexaColumn : MonoBehaviour
             HexaCell cell = addCellColumn.hexaCellList[i];
             cell.transform.SetParent(transform);
             cell.transform.localPosition = new Vector3(0, localSpacingY * (1 + hexaCellList.Count), 0);
-            cell.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));  // TODO : Kishan 
+            cell.transform.rotation = Quaternion.Euler(new Vector3(0,0, 0));  // TODO : Kishan 
             hexaCellList.Add(cell);
         }
 
@@ -327,7 +327,7 @@ public class HexaColumn : MonoBehaviour
             HexaCell cell = addCellColumn.hexaCellList[i];
             cell.transform.SetParent(transform);
             cell.transform.localPosition = new Vector3(0, localSpacingY * (1 + hexaCellList.Count), 0);
-            cell.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));  // TODO : Kishan 
+            cell.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));  // TODO : Kishan 
             hexaCellList.Add(cell);
         }
 

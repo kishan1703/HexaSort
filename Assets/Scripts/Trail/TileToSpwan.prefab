@@ -215,11 +215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1229a37f04fa26d4e8d7e9842fa43437, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1229a37f04fa26d4e8d7e9842fa43437, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1229a37f04fa26d4e8d7e9842fa43437, type: 3}
       propertyPath: m_LocalRotation.y
@@ -231,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1229a37f04fa26d4e8d7e9842fa43437, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1229a37f04fa26d4e8d7e9842fa43437, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 03ffdf16f3703e5418cb10bc519fcf6d, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 1229a37f04fa26d4e8d7e9842fa43437, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 405d6808eed5a5e4e8d3296337f341c8, type: 2}
     - target: {fileID: 919132149155446097, guid: 1229a37f04fa26d4e8d7e9842fa43437, type: 3}
       propertyPath: m_Name
       value: Flower

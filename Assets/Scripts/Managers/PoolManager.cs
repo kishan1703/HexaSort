@@ -64,7 +64,7 @@ public class PoolManager : MonoBehaviour
             HexaCell hexaCell = Instantiate(hexaCellPrefab);
             hexaCell.transform.SetParent(poolParent);
             hexaCell.transform.localPosition = Vector3.zero;
-            hexaCell.transform.localRotation = Quaternion.Euler(0, 90, 0);
+            hexaCell.transform.localRotation = Quaternion.Euler(0, 0, 0);
             hexaCell.transform.localScale = Vector3.one;
             hexaCell.gameObject.SetActive(false);
             hexaCellPools.Add(hexaCell);
@@ -78,7 +78,7 @@ public class PoolManager : MonoBehaviour
             HexaColumn hexaColumn = Instantiate(hexaColumnPrefab);
             hexaColumn.transform.SetParent(poolParent);
             hexaColumn.transform.localPosition = Vector3.zero;
-            hexaColumn.transform.localRotation = Quaternion.Euler(0, 90, 0);
+            hexaColumn.transform.localRotation = Quaternion.Euler(0, 0, 0);
             hexaColumn.transform.localScale = Vector3.one;
             hexaColumn.gameObject.SetActive(false);
             hexaColumnPools.Add(hexaColumn);
